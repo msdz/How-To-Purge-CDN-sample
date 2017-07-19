@@ -11,32 +11,31 @@
 
         @using (Html.BeginForm("Purge", "Home", FormMethod.Post))
         {
-            @Html.TextBox("ClientId1", "da6fb000-5106-4278-aa72-cfb23552684e")
             <ul>
-                <li><label>客户端ID:</label></li>
-                <li>@Html.TextBox("ClientId", "da6fb000-5106-4278-aa72-cfb23552684e")</li>
+                <li><label>ClientId:</label></li>
+                <li>@Html.TextBox("ClientId")</li>
             </ul>
             <ul>
-                <li><label>客户端密钥：</label></li>
-                <li>@Html.TextBox("ClientSecret", "r6Aou2pjPWrfiWsgfaiJju6V/AlZ0fUwgYDDBcDwVKo=")</li>
+                <li><label>ClientSecret：</label></li>
+                <li>@Html.TextBox("ClientSecret")</li>
             </ul>
             <ul>
-                <li><label>订阅：</label></li>
-                <li>@Html.TextBox("Subscriptions", "1bb2b862-f8fc-4d52-8a1d-a5909d5a0795")</li>
+                <li><label>Subscriptions：</label></li>
+                <li>@Html.TextBox("Subscriptions")</li>
             </ul><ul>
-                <li><label>资源组：</label></li>
-                <li>@Html.TextBox("ResourceGroup", "david")</li>
+                <li><label>ResourceGroup：</label></li>
+                <li>@Html.TextBox("ResourceGroup")</li>
             </ul><ul>
-                <li><label>CDN 文件：</label></li>
-                <li>@Html.TextBox("CDNProfile", "mscss")</li>
+                <li><label>CDNProfile：</label></li>
+                <li>@Html.TextBox("CDNProfile")</li>
             </ul><ul>
-                <li><label>CDN 节点：</label></li>
-                <li>@Html.TextBox("CDNEndpoint", "mscsssa")</li>
+                <li><label>CDNEndpoint：</label></li>
+                <li>@Html.TextBox("CDNEndpoint")</li>
             </ul>
 
             <ul>
-                <li><label>资源文件：</label></li>
-                <li>@Html.TextBox("Resource","123.png")</li>
+                <li><label>Resource：</label></li>
+                <li>@Html.TextBox("Resource")</li>
             </ul>
             <ul>
                 <li></li>

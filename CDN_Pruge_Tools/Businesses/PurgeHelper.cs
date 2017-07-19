@@ -10,7 +10,7 @@ namespace CDN_Pruge_Tools.Businesses
 {
     public class PurgeHelper
     {
-        public static void GetAccessTokenAndMakePurgeCall(PurgeModel purge)
+        public static bool GetAccessTokenAndMakePurgeCall(PurgeModel purge)
         {
             var uri = @"https://management.azure.com/subscriptions/" + purge.Subscriptions +
                       @"/resourcegroups/" + purge.ResourceGroup +
@@ -25,16 +25,8 @@ namespace CDN_Pruge_Tools.Businesses
 
             dynamic content = new { ContentPaths = purge.PurgeList };
             //For purge all (*.*)  bodyText = "{\”ContentPaths\”:[\”/*\”]}”;
-
             var responeCode = GetPurgeHttpStatusCode(uri, token, content);
-            if (responeCode == HttpStatusCode.Accepted)
-            {
-                //Pruge Successful
-            }
-            else
-            {
-                //Pruge Failed
-            }
+            return responeCode == HttpStatusCode.Accepted;
         }
 
         /// <summary>
@@ -70,6 +62,5 @@ namespace CDN_Pruge_Tools.Businesses
             public string ActiveDirectory { get; set; }
             public List<string> PurgeList { get; set; }
         }
-
     }
 }

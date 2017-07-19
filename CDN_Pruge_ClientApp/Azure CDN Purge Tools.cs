@@ -27,15 +27,13 @@ namespace CDN_Pruge_ClientApp
                 InitialDirectory = Application.StartupPath,
                 Filter = @"txt files (*.txt)|*.txt",
                 FileName = DateTime.Now.ToString("yyyyMMdd") + "_" + "PurgeResource.txt"
-            };//定义一个保存文件控件
+            };
 
             if (saveFile.ShowDialog() == DialogResult.OK)
             {
                 path = saveFile.FileName;
                 using (var fileStream = new FileStream(path, FileMode.OpenOrCreate, FileAccess.Write, FileShare.Read))
                 {
-                    //获取页面内容
-                    //转换为json字符串
                     var json = JsonConvert.SerializeObject(GetPurgeInfo());
                     var formatJson = ConvertJsonString(json);
                     var sW = new StreamWriter(fileStream, Encoding.UTF8);
@@ -51,7 +49,7 @@ namespace CDN_Pruge_ClientApp
             {
                 InitialDirectory = Application.StartupPath,
                 Filter = @"txt files (*.txt)|*.txt"
-            }; //定义一个打开文件控件
+            }; 
             if (openFile.ShowDialog() != DialogResult.OK) return;
             var path = openFile.FileName;
             try
@@ -83,7 +81,6 @@ namespace CDN_Pruge_ClientApp
 
         private string ConvertJsonString(string str)
         {
-            //格式化json字符串
             var serializer = new JsonSerializer();
             var tr = new StringReader(str);
             var jtr = new JsonTextReader(tr);
