@@ -16,7 +16,7 @@ namespace CDN_Pruge_Tools.Businesses
                       @"/resourcegroups/" + purge.ResourceGroup +
                       @"/providers/Microsoft.Cdn/profiles/" + purge.CdnProfile +
                       @"/endpoints/" + purge.CdnEndpoint +
-                      @"/purge?api-version=2015-06-01";
+                      @"/purge?api-version=2018-04-02";
 
             var authenticationContext = new AuthenticationContext(@"https://login.microsoftonline.com/" + purge.ActiveDirectory + @".onmicrosoft.com");
             var clientCredential = new ClientCredential(purge.ClientId, purge.ClientSecret);
